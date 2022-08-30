@@ -10,12 +10,12 @@
             <p class="description">{{ product.description }}</p>
             <h4>${{ product.price }}</h4>
         </div>
-        <div class="cart-total my-3 text-center" v-if="productTotal">
-            <h5 class="py-0 my-0">In Cart: {{ productTotal }}</h5>
-        </div>
-        <div class="button-container text-center">
+        <div class="button-container my-3 text-center">
             <button class="btn btn-danger btn-sm remove me-2" @click="productRemoved">Remove</button>
             <button class="btn btn-dark btn-sm add" @click="productAdded">Add</button>
+        </div>
+        <div class="cart-total text-center" v-if="productTotal">
+            <h5 class="py-0 my-0">In Cart: {{ productTotal }}</h5>
         </div>
     </div>
 </div>

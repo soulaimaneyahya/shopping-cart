@@ -23,7 +23,7 @@ export default {
     },
     computed: {
         totaCost() {
-            return this.cart.price * this.cart.quantity
+            return (this.cart.price * this.cart.quantity).toFixed(2)
         },
         description() {
             return `${this.cart.description.substring(0, 80)}..`
