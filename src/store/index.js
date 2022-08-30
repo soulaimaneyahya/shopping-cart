@@ -1264,6 +1264,16 @@ const store = createStore({
             const item = state.cart.find(x => x.id === product.id)
             if (item) return item.quantity
             else return null
+        },
+        cartItems: state => {
+            return state.cart
+        },
+        cartTotalCost: state => {
+            let result = 0
+            state.cart.forEach(item => {
+                result += item.price * item.quantity
+            });
+            return result
         }
     },
     mutations: {
@@ -1277,7 +1287,7 @@ const store = createStore({
         removeFromCart(state, product) {
             const item = state.cart.find(x => x.id === product.id)
             if (item) {
-                if (item.quantity > 0) {
+                if (item.quantity > 1) {
                     item.quantity--
                 } else {
                     state.cart = state.cart.filter(i => i.id !== product.id)

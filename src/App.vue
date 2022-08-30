@@ -34,7 +34,7 @@
 export default {
     computed: {
         cartItems() {
-            return (this.$store.state.cart).length
+            return (this.$store.getters.cartItems).length
         }
     }
 }
