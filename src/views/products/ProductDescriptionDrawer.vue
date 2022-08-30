@@ -57,9 +57,7 @@ export default {
         opacity: 0.6;
         z-index: 10;
         display: none;
-        transition: display .5s;
     }
-
     .drawer {
         width: 25vw;
         height: 100vh;
@@ -68,16 +66,21 @@ export default {
         top: 0;
         left: 0;
         padding: 15px;
-        transition: left .5;
         opacity: 1;
         display: none;
         z-index: 11;
         overflow-y: scroll;
+        animation: cananimation .3s ease-in-out;
     }
     .show {
         display: block;
     }
     
+    @keyframes cananimation {
+        from {transform: translateX(-100%);}
+        to {transform: translateX(0);}
+    }
+
     @media (max-width: 700px){
 	    .drawer { width: 50vw; }
     }
