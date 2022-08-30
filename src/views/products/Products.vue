@@ -8,8 +8,8 @@
       />
       <h3 class="my-3">Products</h3>
       <div>
-        <div class="row row-cols-1 row-cols-md-6 g-4">
-          <ProductsSummaryCart
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+          <ProductItem
             :product="item"
             @view-product="viewProduct"
             class="col"
@@ -22,7 +22,7 @@
 </template>
   
 <script>
-import ProductsSummaryCart from './ProductsSummaryCart.vue';
+import ProductItem from './ProductItem.vue';
 import ProductDescriptionDrawer from './ProductDescriptionDrawer.vue';
 export default {
   data() {
@@ -51,7 +51,7 @@ export default {
   mounted() {
     // console.log(this.products);
   },
-  components: { ProductsSummaryCart, ProductDescriptionDrawer }
+  components: { ProductItem, ProductDescriptionDrawer }
 }
 </script>
   
